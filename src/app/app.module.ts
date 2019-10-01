@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
+    MatButtonModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
     FlexLayoutModule
@@ -35,7 +36,6 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppModule { }
 
-platformBrowserDynamic().bootstrapModule(AppModule);
 
 =======
 >>>>>>> Stashed changes
