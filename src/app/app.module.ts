@@ -6,11 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component';
 import { MatFormFieldModule, MatInputModule, MatGridListModule, MatButtonModule} from '@angular/material';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< Updated upstream
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HttpClientModule } from '@angular/common/http';
-=======
-import { FlexLayoutModule } from '@angular/flex-layout';
 >>>>>>> Stashed changes
 
 
@@ -28,11 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-<<<<<<< Updated upstream
-    HttpClientModule,
-=======
     MatButtonModule,
->>>>>>> Stashed changes
+    HttpClientModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
     FlexLayoutModule
