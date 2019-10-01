@@ -1,42 +1,48 @@
+<div align= center>
+    <div class='card' >
+        <mat-grid-list  cols="3" rowHeight="100px">
 <form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
- 
-    <p class="h4 mb-4">Registrazione</p>
-    <mat-form-field appearance="legacy">
-  
-      <div >
+    <mat-grid-tile [colspan]=3 [rowspan]=1>
+        <p class="h4 mb-4">Registrazione</p>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <mat-form-field appearance="legacy">
+            <div >
         <input matInput type="text"
                 class="form-control"
-                name="firstName"
                 formControlName="nome"
-              placeholder='nome'>
+                placeholder='nome'>
         <div *ngIf="validatore.controls.nome.dirty || validatore.controls.nome.touched">
           <div *ngIf="validatore.controls['nome'].hasError('required')">
-              <p style='color: red'>First name is required</p>
+              <p style='color: red'>Nome Richiesto</p>
           </div>
         </div>
-      </div>
-    </mat-form-field>
-  
-    <p>
-    <mat-form-field appearance="legacy">
-  
-      <div>
+            </div>
+        </mat-form-field>
+    </mat-grid-tile>
+    
+    <mat-grid-tile [colspan]=1 [rowspan]=1>
+        <mat-form-field appearance="legacy">
+        <div>
         <input matInput type="text"
                 class="form-control"
-                name="lastName"
                 formControlName="cognome"
                 placeholder="cognome">
         <div *ngIf="validatore.controls.cognome.dirty || validatore.controls.cognome.touched">
               <div *ngIf="validatore.controls['cognome'].hasError('required')">
-              <p style='color: red'>Last name is required</p>
-              </div>
-              <div *ngIf="validatore.controls['cognome'].hasError('pattern')">
-              <p style='color: red'>Last name non è un numero</p>
+                <p style='color: red'>Last name is required</p>
               </div>
         </div>
-      </div>
-    </mat-form-field>
-    </p>
+        </div>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-form-field>
+            <input matInput type='text' placeholder='materia'/>
+        </mat-form-field>
+    </mat-grid-tile>
   
     <!-- <app-form formControlName='emails' [validEmail]='validEmail'>
     </app-form> -->
@@ -49,3 +55,8 @@
       </button>
             
     </div>  
+
+</form>
+        </mat-grid-list>
+    </div>
+</div>

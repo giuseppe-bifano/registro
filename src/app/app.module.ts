@@ -5,8 +5,10 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component';
-import { MatFormFieldModule, MatInputModule} from '@angular/material';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule, MatInputModule, MatGridListModule} from '@angular/material';
+import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 
 
 @NgModule({
@@ -20,9 +22,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatGridListModule,
     NoopAnimationsModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);
+
