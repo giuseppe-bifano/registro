@@ -1,0 +1,51 @@
+<form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
+ 
+    <p class="h4 mb-4">Registrazione</p>
+    <mat-form-field appearance="legacy">
+  
+      <div >
+        <input matInput type="text"
+                class="form-control"
+                name="firstName"
+                formControlName="nome"
+              placeholder='nome'>
+        <div *ngIf="validatore.controls.nome.dirty || validatore.controls.nome.touched">
+          <div *ngIf="validatore.controls['nome'].hasError('required')">
+              <p style='color: red'>First name is required</p>
+          </div>
+        </div>
+      </div>
+    </mat-form-field>
+  
+    <p>
+    <mat-form-field appearance="legacy">
+  
+      <div>
+        <input matInput type="text"
+                class="form-control"
+                name="lastName"
+                formControlName="cognome"
+                placeholder="cognome">
+        <div *ngIf="validatore.controls.cognome.dirty || validatore.controls.cognome.touched">
+              <div *ngIf="validatore.controls['cognome'].hasError('required')">
+              <p style='color: red'>Last name is required</p>
+              </div>
+              <div *ngIf="validatore.controls['cognome'].hasError('pattern')">
+              <p style='color: red'>Last name non è un numero</p>
+              </div>
+        </div>
+      </div>
+    </mat-form-field>
+    </p>
+  
+    <!-- <app-form formControlName='emails' [validEmail]='validEmail'>
+    </app-form> -->
+    
+    
+    <div class="card-footer text-center">
+      <button type="submit"
+              class="btn btn-primary"
+              [disabled]="validatore.invalid">Submit
+      </button>
+            
+    </div>  
