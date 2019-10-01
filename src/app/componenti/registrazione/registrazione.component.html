@@ -3,7 +3,7 @@
         <mat-grid-list  cols="3" rowHeight="100px">
 <form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
     <mat-grid-tile [colspan]=3 [rowspan]=1>
-        <p class="h4 mb-4">Registrazione</p>
+      <b><p class="h4 mb-4">Registrazione</p></b>
     </mat-grid-tile>
 
     <mat-grid-tile [colspan]=1 [rowspan]=1>
@@ -49,10 +49,10 @@
     
     
     <div class="card-footer text-center">
-      <button type="submit"
+     <!--  <button type="submit"
               class="btn btn-primary"
               [disabled]="validatore.invalid">Submit
-      </button>
+      </button> -->
             
     </div>  
 

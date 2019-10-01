@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl, FormArray } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 export function emailDomainValidator(control: AbstractControl) {
   let email = control.value;
@@ -29,9 +30,9 @@ export function emailDomainValidator(control: AbstractControl) {
 export class RegistrazioneComponent implements OnInit {
   validatore: FormGroup;
   emails: FormArray;
-
-
-  constructor(private fb: FormBuilder) { }
+  
+  
+  constructor(private fb: FormBuilder,private api : ApiService) { }
 
   ngOnInit() {
     this.validatore = this.fb.group({
@@ -40,6 +41,8 @@ export class RegistrazioneComponent implements OnInit {
       emails: new FormArray([], [Validators.required, emailDomainValidator])
     });
     this.addEmail();
+    this.api.getRegistro();
+    
   }
 
   createEmail(): FormGroup {
