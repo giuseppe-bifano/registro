@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component';
 import { MatFormFieldModule, MatInputModule, MatGridListModule, MatButtonModule} from '@angular/material';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 >>>>>>> Stashed changes
 
@@ -24,8 +25,6 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatButtonModule,
-    HttpClientModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
     FlexLayoutModule
@@ -36,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppModule { }
 
-<<<<<<< Updated upstream
+platformBrowserDynamic().bootstrapModule(AppModule);
 
 =======
 >>>>>>> Stashed changes
