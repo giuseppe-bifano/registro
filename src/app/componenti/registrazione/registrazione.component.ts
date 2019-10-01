@@ -30,9 +30,8 @@ export function emailDomainValidator(control: AbstractControl) {
 export class RegistrazioneComponent implements OnInit {
   validatore: FormGroup;
   emails: FormArray;
-  
-  
-  constructor(private fb: FormBuilder,private api : ApiService) { }
+
+  constructor(private fb: FormBuilder, private api: ApiService) { }
 
   ngOnInit() {
     this.validatore = this.fb.group({
@@ -42,7 +41,7 @@ export class RegistrazioneComponent implements OnInit {
     });
     this.addEmail();
     this.api.getRegistro();
-    
+
   }
 
   createEmail(): FormGroup {

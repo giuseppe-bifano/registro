@@ -8,7 +8,6 @@ import { MatFormFieldModule, MatInputModule, MatGridListModule, MatButtonModule}
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
->>>>>>> Stashed changes
 
 
 
@@ -28,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
 
   ],
   providers: [],
@@ -37,6 +37,4 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppModule { }
 
 
-=======
->>>>>>> Stashed changes
 

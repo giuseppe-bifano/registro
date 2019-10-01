@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-url='http://localhost:8000/api/registro'
+  url = 'http://localhost:8000/api/registro';
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-getRegistro(){
-this.http.get('http://localhost:8000/api/registro').subscribe((res)=>{console.log('risposta', res)},(x)=>(console.log("errore di comunicazione"))); 
-}
+  getRegistro() {
+  this.http.get('http://localhost:8000/api/registro').subscribe((res) => {
+    console.log('risposta', res); }, (x) => (console.log('errore di comunicazione')));
+  }
 }
