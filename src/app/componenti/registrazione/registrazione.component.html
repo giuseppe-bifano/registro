@@ -1,43 +1,74 @@
 <div align= center>
+<<<<<<< Updated upstream
     <div class='card' >
         <mat-grid-list  cols="3" rowHeight="100px">
 <form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
     <mat-grid-tile [colspan]=3 [rowspan]=1>
       <b><p class="h4 mb-4">Registrazione</p></b>
     </mat-grid-tile>
+=======
+    <div class='card' >     
+           <p class="h4 mb-4">Registrazione</p>
+            <form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
+                <div class='container'
+                    fxLayout
+                    fxLayout.xs='column'
+                    fxLayoutAlign='center'
+                    fxLayoutGap='10px'
+                    fxLayoutGap.xs='0'>
+>>>>>>> Stashed changes
 
-    <mat-grid-tile [colspan]=1 [rowspan]=1>
-        <mat-form-field appearance="legacy">
-            <div >
-        <input matInput type="text"
+                    <div class='item item-1'>
+                        <mat-form-field appearance="legacy">
+                        <div >
+                            <input matInput type="text"
                 class="form-control"
                 formControlName="nome"
-                placeholder='nome'>
-        <div *ngIf="validatore.controls.nome.dirty || validatore.controls.nome.touched">
+                                    placeholder='nome'>
+                            <div *ngIf="validatore.controls.nome.dirty || validatore.controls.nome.touched">
           <div *ngIf="validatore.controls['nome'].hasError('required')">
               <p style='color: red'>Nome Richiesto</p>
           </div>
-        </div>
-            </div>
-        </mat-form-field>
-    </mat-grid-tile>
-    
-    <mat-grid-tile [colspan]=1 [rowspan]=1>
-        <mat-form-field appearance="legacy">
-        <div>
-        <input matInput type="text"
+                            </div>
+                        </div>
+                        </mat-form-field>
+                    </div>
+
+                    <div class='item item-2'>
+                        <mat-form-field appearance="legacy">
+                        <div>
+                            <input matInput type="text"
                 class="form-control"
                 formControlName="cognome"
-                placeholder="cognome">
-        <div *ngIf="validatore.controls.cognome.dirty || validatore.controls.cognome.touched">
+                                    placeholder="cognome">
+                            <div *ngIf="validatore.controls.cognome.dirty || validatore.controls.cognome.touched">
               <div *ngIf="validatore.controls['cognome'].hasError('required')">
                 <p style='color: red'>Last name is required</p>
               </div>
-        </div>
-        </div>
-        </mat-form-field>
-    </mat-grid-tile>
+                            </div>
+                        </div>
+                        </mat-form-field>
+                    </div>
 
+                    <div class='item item-3'>
+                        <mat-form-field>
+                        <input matInput type='text' placeholder='materia'/>
+                        </mat-form-field>   
+                    </div>
+                    
+                </div>
+
+                <!-- <app-form formControlName='emails' [validEmail]='validEmail'>
+                </app-form> -->
+
+                <div class='container'
+                    fxLayout
+                    fxLayout.xs='column'
+                    fxLayoutAlign='center'
+                    fxLayoutGap='10px'
+                    fxLayoutGap.xs='0'>
+
+<<<<<<< Updated upstream
     <mat-grid-tile>
         <mat-form-field>
             <input matInput type='text' placeholder='materia'/>
@@ -55,8 +86,30 @@
       </button> -->
             
     </div>  
+=======
+                    <div class='item item-1'>
+                        <mat-form-field>
+                            <input matInput type='text' placeholder="password"/>
+                        </mat-form-field>
+                    </div>
+>>>>>>> Stashed changes
 
-</form>
-        </mat-grid-list>
+                    <div class='item item-2'>
+                        <mat-form-field>
+                            <input matInput type='text' placeholder="conferma password"/>
+                        </mat-form-field>
+                    </div>                
+                </div>  
+                                       
+                    
+                                                    
+<!--                     type="submit"[disabled]="validatore.invalid"
+ -->            <button 
+                        mat-raised-button
+                        [color]="primary"
+                        >Submit
+                </button>            
+                
+            </form>
     </div>
 </div>
