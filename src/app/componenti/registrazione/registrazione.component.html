@@ -18,7 +18,7 @@
                                     formControlName="nome"
                                     placeholder='nome'>
                             <div *ngIf="(validatore.controls.nome.dirty || validatore.controls.nome.touched) && validatore.controls['nome'].hasError('required')">
-                                <p style='color: red'>Nome Richiesto</p>
+                                <p class='error'>Nome Richiesto</p>
 <!--                             <div *ngIf="validatore.controls['nome'].hasError('required')"></div>--> 
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                                     placeholder="cognome">
                             <div *ngIf="validatore.controls.cognome.dirty || validatore.controls.cognome.touched">
                             <div *ngIf="validatore.controls['cognome'].hasError('required')">
-                                <p style='color: red'>Last name is required</p>
+                                <p class='error'>cognome richiesto</p>
                             </div>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                                         </mat-option>
                             </mat-select>
                         </mat-form-field>
-                        <p>Studente<mat-slide-toggle>Professore</mat-slide-toggle></p>
+                        <p>Studente<mat-slide-toggle formControlName='ruolo'>Professore</mat-slide-toggle></p>
                     </div>
 
                     <!-- emails -->
@@ -145,7 +145,7 @@
 <!--                     type="submit"[disabled]="validatore.invalid"
  -->            <button mat-raised-button
                         color="primary"
-                        [disabled]='validatore.invalid'
+                        
                         >Submit
                 </button>            
                 

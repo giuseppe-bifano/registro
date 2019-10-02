@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl, FormArray } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { Materie } from 'src/app/models/materie';
@@ -52,7 +52,7 @@ export class RegistrazioneComponent implements OnInit {
     this.validatore = this.fb.group({
       nome: new FormControl('', [Validators.required]),
       cognome: new FormControl('', [Validators.required]),
-
+      ruolo: new FormControl(),
       emails: new FormArray([], [Validators.required, emailDomainValidator])
     });
     this.addEmail();
@@ -77,4 +77,7 @@ export class RegistrazioneComponent implements OnInit {
     // console.log(this.validEmail);
   }
 
+  onSubmit() {
+    
+  }
 }
