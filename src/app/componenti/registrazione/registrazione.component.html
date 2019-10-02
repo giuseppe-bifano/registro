@@ -2,6 +2,7 @@
     <div class='card' >     
            <p class="h4 mb-4">Registrazione</p>
             <form novalidate class="text-center border border-light p-5" [formGroup]="validatore" (ngSubmit)="onSubmit()" >
+                <!-- nome e cognome -->
                 <div class='container'
                     fxLayout
                     fxLayout.xs='column'
@@ -16,14 +17,13 @@
                                     class="form-control"
                                     formControlName="nome"
                                     placeholder='nome'>
-                            <div *ngIf="validatore.controls.nome.dirty || validatore.controls.nome.touched">
-                            <div *ngIf="validatore.controls['nome'].hasError('required')">
+                            <div *ngIf="(validatore.controls.nome.dirty || validatore.controls.nome.touched) && validatore.controls['nome'].hasError('required')">
                                 <p style='color: red'>Nome Richiesto</p>
-                            </div>
+<!--                             <div *ngIf="validatore.controls['nome'].hasError('required')"></div>--> 
                             </div>
                         </div>
                         </mat-form-field>
-                    </div>
+                     </div>
 
                     <div class='item item-2'>
                         <mat-form-field appearance="legacy">
@@ -40,18 +40,88 @@
                         </div>
                         </mat-form-field>
                     </div>
-
-                    <div class='item item-3'>
-                        <mat-form-field>
-                        <input matInput type='text' placeholder='materia'/>
-                        </mat-form-field>   
-                    </div>
                     
                 </div>
 
-                <!-- <app-form formControlName='emails' [validEmail]='validEmail'>
-                </app-form> -->
+                <!-- emails e materia/classe -->
+                <div fxLayout.xs='column'                                        
+                fxLayoutAlign='center'
+                fxLayoutGap='10px'
+                fxLayoutGap.xs='0'>
 
+                    <!-- materia/classe -->
+                    <div class='item item-2'>
+                        <mat-form-field>
+                            <mat-label>Materia</mat-label>
+                            <mat-select>
+                                        
+                                        <mat-option *ngFor="let materia of materie" [value]="materia.materia" >
+                                          {{materia.materiaValue}}
+                                        </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <p>Studente<mat-slide-toggle>Professore</mat-slide-toggle></p>
+                    </div>
+
+                    <!-- emails -->
+                    <div class='item item-1' >
+                        <div class='container'
+                    fxLayout.xs='column'                                        
+                    fxLayoutAlign='center'
+                    fxLayoutGap='10px'
+                    fxLayoutGap.xs='0'
+                    gdAlignColumns="center">
+
+                    <div formArrayName="emails"
+                        *ngFor="let email of validatore.get('emails')['controls']; let i = index;">
+      
+                        <div class='item item-i' [formGroupName]="i">
+                            <mat-form-field appearance="legacy"> 
+                                <input type="text"
+                                    matInput
+                                    class="form-control"
+                                    formControlName="email"
+                                    placeholder="Email {{i+1}}">
+            
+                                <div *ngIf= "email.controls.email.dirty || email.controls.email.touched">
+                                    <div *ngIf="email.controls.email.errors?.required">
+                <p style='color: red'>Email is required</p>
+                                    </div>
+                                    <div *ngIf="email.controls.email.errors?.emailDomain">
+                <p style='color: red'>il dominio non è gmail.com</p>
+                                    </div>
+                                    <div *ngIf="email.controls.email.errors?.malformedEmail">
+                <p style='color: red'>il formato email non è valido</p>
+                                    </div>
+                                </div>
+                            </mat-form-field>
+                            <span *ngIf='emails.length > 1'> 
+                                <button mat-icon-button
+                                        color="warn" 
+                                        (click)='removeEmail(i)'>
+                                    <mat-icon>remove</mat-icon>
+                                </button> 
+                            </span>
+                        </div>
+  
+                    </div>
+                
+                    <span gdGridAlign="start stretch" >
+                        <button mat-icon-button
+                            color="primary"                               
+                            (click)='addEmail()'
+                            >
+                            <mat-icon>add</mat-icon>
+<!--                             [disabled]="validatore.invalid"
+ -->                        </button>
+                    </span>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- password e conferma -->
                 <div class='container'
                     fxLayout
                     fxLayout.xs='column'
@@ -70,14 +140,12 @@
                             <input matInput type='text' placeholder="conferma password"/>
                         </mat-form-field>
                     </div>                
-                </div>  
-                                       
-                    
-                                                    
+                </div>                 
+                            
 <!--                     type="submit"[disabled]="validatore.invalid"
- -->            <button 
-                        mat-raised-button
-                        [color]="primary"
+ -->            <button mat-raised-button
+                        color="primary"
+                        [disabled]='validatore.invalid'
                         >Submit
                 </button>            
                 

@@ -4,7 +4,13 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './componenti/registrazione/registrazione.component';
-import { MatFormFieldModule, MatInputModule, MatGridListModule, MatButtonModule} from '@angular/material';
+import { MatFormFieldModule,
+         MatInputModule,
+         MatGridListModule,
+         MatButtonModule,
+         MatIconModule,
+         MatSelectModule,
+         MatSlideToggleModule} from '@angular/material';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatGridListModule,
     MatButtonModule,
+    MatIconModule,
+    MatSelectModule,
+    MatSlideToggleModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,

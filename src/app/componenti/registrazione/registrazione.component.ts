@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, AbstractControl, FormArray } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
+import { Materie } from 'src/app/models/materie';
+import { Classi } from 'src/app/models/classi';
 
 export function emailDomainValidator(control: AbstractControl) {
   let email = control.value;
@@ -30,6 +32,19 @@ export function emailDomainValidator(control: AbstractControl) {
 export class RegistrazioneComponent implements OnInit {
   validatore: FormGroup;
   emails: FormArray;
+  materie: Materie[] = [
+    {materia: 'matematica-0', materiaValue: 'Matematica'},
+    {materia: 'italiano-1', materiaValue: 'Italiano'},
+    {materia: 'arte-2', materiaValue: 'Arte'}
+  ];
+  classi: Classi[] = [
+    {classe: 'primo-0', classeValue: 'Primo'},
+    {classe: 'secondo-0', classeValue: 'Secondo'},
+    {classe: 'terzo-0', classeValue: 'Terzo'},
+    {classe: 'quarto-0', classeValue: 'Quarto'},
+    {classe: 'quinto-0', classeValue: 'Quinto'}
+  ];
+
 
   constructor(private fb: FormBuilder, private api: ApiService) { }
 
@@ -37,6 +52,7 @@ export class RegistrazioneComponent implements OnInit {
     this.validatore = this.fb.group({
       nome: new FormControl('', [Validators.required]),
       cognome: new FormControl('', [Validators.required]),
+
       emails: new FormArray([], [Validators.required, emailDomainValidator])
     });
     this.addEmail();
