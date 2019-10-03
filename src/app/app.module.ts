@@ -14,12 +14,14 @@ import { MatFormFieldModule,
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-
+import { LoginComponent } from './componenti/login/login.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrazioneComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     NoopAnimationsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,13 +30,16 @@ export function emailDomainValidator(control: AbstractControl) {
   styleUrls: ['./registrazione.component.css']
 })
 export class RegistrazioneComponent implements OnInit {
+  titlePage : string= "Registrazione";
   validatore: FormGroup;
   emails: FormArray;
+  
   materie: Materie[] = [
     {materia: 'matematica-0', materiaValue: 'Matematica'},
     {materia: 'italiano-1', materiaValue: 'Italiano'},
     {materia: 'arte-2', materiaValue: 'Arte'}
   ];
+  
   classi: Classi[] = [
     {classe: 'primo-0', classeValue: 'Primo'},
     {classe: 'secondo-0', classeValue: 'Secondo'},

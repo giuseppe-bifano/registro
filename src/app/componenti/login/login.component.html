@@ -1,0 +1,65 @@
+<div align=center>
+    <div class='card'>
+        <b>
+            <p class="h4 mb-4">{{titlePage}}</p>
+        </b>
+        <form novalidate class="text-center border border-light p-5" [formGroup]="user" (ngSubmit)="onSubmit()">
+            <!-- nome e cognome -->
+
+            <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='50px'
+                fxLayoutGap.xs='0'>
+                <div class='item item-1'>
+                    <mat-form-field appearance="legacy">
+                        <div>
+                            <input matInput type="text" class="form-control" formControlName="username"
+                                placeholder='username'>
+                            <div
+                                *ngIf="(user.controls.username.dirty || user.controls.username.touched) && user.controls['username'].hasError('required')">
+                                <p class='error'>User Richiesto</p>
+                                <!--                             <div *ngIf="user.controls['nome'].hasError('required')"></div>-->
+                            </div>
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <div class='item item-2'>
+                    <mat-form-field appearance="legacy">
+                        <div>
+                            <input matInput type="text" class="form-control" formControlName="password"
+                                placeholder="password">
+                            <div *ngIf="user.controls.password.dirty || user.controls.password.touched">
+                                <div *ngIf="user.controls['password'].hasError('required')">
+                                    <p class='error'>Password richiesto</p>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <p>Studente<mat-slide-toggle formControlName='ruolo'>Professore</mat-slide-toggle>
+            </p>
+
+
+
+        </form>
+        <div class='container' fxLayout fxLayout.xs='column' fxLayoutAlign='center' fxLayoutGap='280px'
+            fxLayoutGap.xs='0'>
+
+            <button mat-raised-button (click)="signIn()"
+            color="primary"
+            
+            >Sign in
+    </button>    
+
+    <button mat-raised-button
+    color="primary"
+    
+    >Login
+</button>    
+
+        </div>
+    </div>
+
+</div>

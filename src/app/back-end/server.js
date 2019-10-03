@@ -39,10 +39,15 @@ router.get('/registro/:id', function(req, res) {
       break;
     }
   }
- 
 });
-
-
+router.get('/registro/:id', function(req, res) {
+  for (var i = 0; i < dati.length; i++) {
+    if (dati[i].id == req.params.id) {
+      res.send(dati[i]);
+      break;
+    }
+  }
+});
 
 router.put('/registro/:id', function(req, res) {
   for (var i = 0; i < dati.length; i++) {
